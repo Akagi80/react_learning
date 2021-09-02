@@ -9,11 +9,14 @@ class Card extends React.Component {
   }
   
   render() {
+    //destrukturyzacja propsów
+    const {title} = this.props;
+
     return (
       <section className={styles.component}>
-        {this.props.title}
+        {title}
       </section>  
-    )
+    );
   }
 }
 
