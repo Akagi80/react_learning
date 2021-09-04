@@ -7,7 +7,8 @@ import styles from './List.scss';
 
 import Hero from '../Hero/Hero';
 import Column from '../Column/ColumnContainer';
-//import Creator from '../Creator/Creator';
+import Container from '../Container/Container';
+import Creator from '../Creator/Creator';
 
 // komponent klasowy (złożony)
 class List extends React.Component {
@@ -17,6 +18,7 @@ class List extends React.Component {
     image: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
+    addColumn: PropTypes.func,
   }
 
   static defaultProps = {
@@ -25,28 +27,28 @@ class List extends React.Component {
 
   render() {
     //destrukturyzacja propsów title, iamge, description
-    const {title, image, description, columns} = this.props;
+    const {title, image, description, columns, addColumn} = this.props;
 
     return (
-      <section className={styles.component}>
-        <Hero 
-          titleText={title} 
-          imagePic={image}
-        />
-        <div className={styles.description}>
-          {ReactHtmlParser(description)}
-        </div>
-        <div className={styles.columns}>
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
-          ))}
-        </div>
-        {/*
-        <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
-        </div>
-        */}
-      </section>
+      <Container>
+        <section className={styles.component}>
+          <Hero 
+            titleText={title} 
+            imagePic={image}
+          />
+          <div className={styles.description}>
+            {ReactHtmlParser(description)}
+          </div>
+          <div className={styles.columns}>
+            {columns.map(columnData => (
+              <Column key={columnData.id} {...columnData} />
+            ))}
+          </div>
+          <div className={styles.creator}>
+            <Creator text={settings.columnCreatorText} action={addColumn}/>
+          </div>
+        </section>
+      </Container>
     );
   }
 }
