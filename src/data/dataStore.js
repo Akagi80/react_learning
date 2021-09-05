@@ -19,7 +19,10 @@ export const settings = {
 
 export const pageContents = {
   title: 'My first React app',
+  title2: 'Testowy',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  content: 'Ble befdmfaifmaofmaoi madfm adf mamadsoi mas mv mai ffamvao maoisd',
 };
 
 export const listData = {
@@ -87,6 +90,11 @@ export const faq = {
   description: 'Interesting things I want to check out!',
 };
 
+export const testowy = {
+  title: 'TESTOWY',
+  content: 'Ble befdmfaifmaofmaoi madfm adf mamadsoi mas mv mai ffamvao maoisd',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+};
 
 const lists = [
   {
