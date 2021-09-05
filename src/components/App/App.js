@@ -2,6 +2,7 @@ import React from 'react';
 import Home from '../Home/HomeContainer';
 import Info from '../Info/Info';
 import FAQ from '../Faq/FAQ';
+import List from '../List/ListContainer';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
 import {AnimatedSwitch} from 'react-router-transition';
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/info' component={Info} />
         <Route exact path='/faq' component={FAQ} />
+        <Route exact path='/list/:id' component={List} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
